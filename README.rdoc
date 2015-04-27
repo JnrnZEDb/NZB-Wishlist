@@ -1,0 +1,13 @@
+== NZB Wishlist
+
+Uses a Newznab indexer to periodically search usenet & sends NZBs directly to SABnzbd.
+
+* Rails 4.2, Ruby 2.2.1 (chruby)
+* Requires curl for SABnzbd integration (multiform posts are hard.)
+* cp/mv config/database.yml~, config/secrets.yml~ & config/deploy.rb~ to remove the ~ and update contents accordingly
+* Supply secrets.yml with a different pushover app key if you don't want to use the default
+* Don't forget to generate your own secret keys for secrets.yml
+* rake db:migrate && rake db:seed for the initial data, you'll enter your settings into the app
+* If you care about running the tests, add your info to the secrets.yml in the test section
+* Uses whenever + deployed_job to manage the search schedule
+* Uses mina as the deployment gem

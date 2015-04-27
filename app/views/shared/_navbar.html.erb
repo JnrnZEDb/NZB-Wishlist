@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'NZB Wishlist', root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to edit_settings_path do %>
+            <i class="glyphicon glyphicon-cog"></i> Settings
+          <% end %>
+        </li>
+        <li>
+          <%= link_to queue_index_path do %>
+            <i class="glyphicon glyphicon-tasks"></i> Queue
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

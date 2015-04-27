@@ -1,0 +1,50 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>
+        <%= @wish.name %>
+    </h2>
+    <hr />
+
+    <div class="btn-group wishlist-actions">
+        <%= link_to(fulfilled_path, class: 'btn btn-sm btn-default') do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i> Fulfilled Wishes
+        <% end %>
+        <%= link_to(root_path, class: 'btn btn-sm btn-default') do %>
+            <i class="glyphicon glyphicon-bookmark"></i> Wishlist
+        <% end %>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title / Details Link</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @wish.results.by_pub_date.each do |result| %>
+                <% css_class = result.downloaded? ? 'btn-success' : 'btn-default' %>
+                <tr>
+                    <td><%= link_to result.title, result.details_url, target: '_blank' %></td>
+                    <td><%= result.category.canonical_name %></td>
+                    <td><%= result.human_readable_size %></td>
+                    <td><%= result.publish_age %></td>
+                    <td>
+                        <button class="btn <%= css_class %> btn-download" data-toggle="tooltip" data-placement="top" title="Send to SABnzbd" data-wish-id="<%= @wish.id %>" data-wish-result-id="<%= result.id %>">
+                            <i class="glyphicon glyphicon-cloud-upload"></i>
+                        </button>
+                        <%= link_to download_wish_result_path(id: result.id), class: 'btn btn-default', data: { toggle: 'tooltip', placement: 'top' }, title: 'Download NZB' do %>
+                            <i class="glyphicon glyphicon-download"></i>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+
+        <tfoot>
+        </tfoot>
+    </table>
+</div>

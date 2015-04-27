@@ -1,0 +1,243 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=110&apikey=<NEWSNAB_APIKEY>&cat=4000&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 16:11:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '811'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=s1fd7o7vuuf5hvrk99208ijrf1; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"3"}},"item":[{"title":"Hopper.Disassembler.v3.7.9.Ubuntu.x64-DVT","guid":"f672a4bf57daf1461dc7a79b79366d30","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/f672a4bf57daf1461dc7a79b79366d30.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/f672a4bf57daf1461dc7a79b79366d30#comments","pubDate":"Fri,
+        06 Mar 2015 12:58:19 +0000","category":"Apps-0day","description":"Hopper.Disassembler.v3.7.9.Ubuntu.x64-DVT","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/f672a4bf57daf1461dc7a79b79366d30.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"16708352","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4010"}},{"@attributes":{"name":"size","value":"16708352"}},{"@attributes":{"name":"guid","value":"f672a4bf57daf1461dc7a79b79366d30"}}]},{"title":"PLURALSIGHT
+        GETTING STARTED WITH UBUNTU TUTORIAL-kEISO","guid":"ff12a3ad9114428c860efd86f66d3cbe","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/ff12a3ad9114428c860efd86f66d3cbe.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/ff12a3ad9114428c860efd86f66d3cbe#comments","pubDate":"Fri,
+        27 Feb 2015 07:54:45 +0000","category":"Apps-ISO","description":"PLURALSIGHT
+        GETTING STARTED WITH UBUNTU TUTORIAL-kEISO","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/ff12a3ad9114428c860efd86f66d3cbe.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"919226151","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4020"}},{"@attributes":{"name":"size","value":"919226151"}},{"@attributes":{"name":"guid","value":"ff12a3ad9114428c860efd86f66d3cbe"}}]},{"title":"Hopper.Disassembler.v3.6.10.Ubuntu.x64-DVT","guid":"c1829b1f3a26aadb6be9df8ceeaa5f33","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/c1829b1f3a26aadb6be9df8ceeaa5f33.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/c1829b1f3a26aadb6be9df8ceeaa5f33#comments","pubDate":"Wed,
+        14 Jan 2015 17:45:26 +0000","category":"Apps-0day","description":"Hopper.Disassembler.v3.6.10.Ubuntu.x64-DVT","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/c1829b1f3a26aadb6be9df8ceeaa5f33.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"16925611","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4010"}},{"@attributes":{"name":"size","value":"16925611"}},{"@attributes":{"name":"guid","value":"c1829b1f3a26aadb6be9df8ceeaa5f33"}}]}]}}'
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 16:11:07 GMT
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=110&apikey=<NEWSNAB_APIKEY>&cat=10000&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Mon, 20 Apr 2015 20:35:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=nev1lsp91sfj91fva7cp17pl87; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"0"}}}}'
+    http_version:
+  recorded_at: Mon, 20 Apr 2015 20:35:29 GMT
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=111&apikey=<NEWSNAB_APIKEY>&cat=4000&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Apr 2015 17:31:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '811'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=okdijkjdo45s4rl70kjg34db44; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"3"}},"item":[{"title":"Hopper.Disassembler.v3.7.9.Ubuntu.x64-DVT","guid":"f672a4bf57daf1461dc7a79b79366d30","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/f672a4bf57daf1461dc7a79b79366d30.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/f672a4bf57daf1461dc7a79b79366d30#comments","pubDate":"Fri,
+        06 Mar 2015 12:58:19 +0000","category":"Apps-0day","description":"Hopper.Disassembler.v3.7.9.Ubuntu.x64-DVT","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/f672a4bf57daf1461dc7a79b79366d30.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"16708352","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4010"}},{"@attributes":{"name":"size","value":"16708352"}},{"@attributes":{"name":"guid","value":"f672a4bf57daf1461dc7a79b79366d30"}}]},{"title":"PLURALSIGHT
+        GETTING STARTED WITH UBUNTU TUTORIAL-kEISO","guid":"ff12a3ad9114428c860efd86f66d3cbe","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/ff12a3ad9114428c860efd86f66d3cbe.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/ff12a3ad9114428c860efd86f66d3cbe#comments","pubDate":"Fri,
+        27 Feb 2015 07:54:45 +0000","category":"Apps-ISO","description":"PLURALSIGHT
+        GETTING STARTED WITH UBUNTU TUTORIAL-kEISO","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/ff12a3ad9114428c860efd86f66d3cbe.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"919226151","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4020"}},{"@attributes":{"name":"size","value":"919226151"}},{"@attributes":{"name":"guid","value":"ff12a3ad9114428c860efd86f66d3cbe"}}]},{"title":"Hopper.Disassembler.v3.6.10.Ubuntu.x64-DVT","guid":"c1829b1f3a26aadb6be9df8ceeaa5f33","link":"https:\/\/redacted-newsnab-domain.com\/getnzb\/c1829b1f3a26aadb6be9df8ceeaa5f33.nzb&i=597&r=<NEWSNAB_APIKEY>","comments":"https:\/\/redacted-newsnab-domain.com\/details\/c1829b1f3a26aadb6be9df8ceeaa5f33#comments","pubDate":"Wed,
+        14 Jan 2015 17:45:26 +0000","category":"Apps-0day","description":"Hopper.Disassembler.v3.6.10.Ubuntu.x64-DVT","enclosure":{"@attributes":{"url":"https:\/\/redacted-newsnab-domain.com\/getnzb\/c1829b1f3a26aadb6be9df8ceeaa5f33.nzb&i=597&r=<NEWSNAB_APIKEY>","length":"16925611","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"4000"}},{"@attributes":{"name":"category","value":"4010"}},{"@attributes":{"name":"size","value":"16925611"}},{"@attributes":{"name":"guid","value":"c1829b1f3a26aadb6be9df8ceeaa5f33"}}]}]}}'
+    http_version:
+  recorded_at: Tue, 21 Apr 2015 17:31:45 GMT
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=111&apikey=<NEWSNAB_APIKEY>&cat=10011&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Tue, 21 Apr 2015 18:22:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=9oh7gk04gslnsld2snnvn9tn84; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"0"}}}}'
+    http_version:
+  recorded_at: Tue, 21 Apr 2015 18:22:50 GMT
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=1&apikey=<NEWSNAB_APIKEY>&cat=1&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Apr 2015 15:24:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=hmdfpjm117s46kemi6q8lbvn24; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"0"}}}}'
+    http_version:
+  recorded_at: Mon, 27 Apr 2015 15:24:19 GMT
+recorded_with: VCR 2.9.3

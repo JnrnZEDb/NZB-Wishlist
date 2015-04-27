@@ -1,0 +1,93 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2><i class="glyphicon glyphicon-cog"></i> Settings</h2>
+    <hr />
+    <%= form_for @settings, url: settings_path, method: :post do |f| %>
+        <% service_glyph = @settings.setup_complete? ? 'glyphicon-ok' : 'glyphicon-option-horizontal' %>
+
+        <div class="form-group<%= " has-error" if @settings.errors[:newsnab_url].any? %>">
+            <%= f.label :newsnab_url, "Newsnab Url", class: "control-label" %>
+            <%= f.text_field :newsnab_url, class: "form-control nn-url", placeholder: "Url of your Newsnab indexer" %>
+            <% if @settings.errors[:newsnab_url].any? %>
+                <span class="help-block"><%= @settings.errors[:newsnab_url].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:newsnab_apikey].any? %>">
+            <%= f.label :newsnab_apikey, "Newsnab API Key", class: "control-label" %>
+            <div class="input-group nn-apikey">
+                <%= f.text_field :newsnab_apikey, class: "form-control", placeholder: "From your Newsnab based indexer" %>
+                <span class="input-group-addon"><i class="glyphicon <%= service_glyph %>"></i></span>
+            </div>
+            <% unless Category.any? %>
+                <span class="help-block"><i>Categories will be populated upon successful API key validation</i></span>
+            <% end %>
+            <% if @settings.errors[:newsnab_apikey].any? %>
+                <span class="help-block"><%= @settings.errors[:newsnab_apikey].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:result_limit].any? %>">
+            <%= f.label :result_limit, "Result Limit", class: "control-label" %>
+            <%= f.number_field :result_limit, class: "form-control", placeholder: "Max search results for a wish" %>
+            <% if @settings.errors[:result_limit].any? %>
+                <span class="help-block"><%= @settings.errors[:result_limit].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:search_interval].any? %>">
+            <%= f.label :search_interval, "Search Interval (hrs)", class: "control-label" %>
+            <%= f.number_field :search_interval, class: "form-control", placeholder: "Interval in hours between searches" %>
+            <% if @settings.errors[:search_interval].any? %>
+                <span class="help-block"><%= @settings.errors[:search_interval].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:sabnzbd_url].any? %>">
+            <%= f.label :sabnzbd_url, "SABnzbd Url", class: "control-label" %>
+            <%= f.text_field :sabnzbd_url, class: "form-control sb-url", placeholder: "Url of your SABnzbd instance" %>
+            <% if @settings.errors[:sabnzbd_url].any? %>
+                <span class="help-block"><%= @settings.errors[:sabnzbd_url].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:sabnzbd_apikey].any? %>">
+            <%= f.label :sabnzbd_apikey, "SABnzbd API Key", class: "control-label" %>
+            <div class="input-group sb-apikey">
+                <%= f.text_field :sabnzbd_apikey, class: "form-control", placeholder: "Your SABnzbd API key" %>
+                <span class="input-group-addon"><i class="glyphicon <%= service_glyph %>"></i></span>
+            </div>
+            <% if @settings.errors[:sabnzbd_apikey].any? %>
+                <span class="help-block"><%= @settings.errors[:sabnzbd_apikey].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group<%= " has-error" if @settings.errors[:pushover_apikey].any? %>">
+            <%= f.label :pushover_apikey, "Pushover API Key", class: "control-label" %>
+            <%= f.text_field :pushover_apikey, class: "form-control", placeholder: "Pushover User/Group Token" %>
+            <% if @settings.errors[:pushover_apikey].any? %>
+                <span class="help-block"><%= @settings.errors[:pushover_apikey].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :notify do %>
+                <%= f.check_box :notify %> Send Notification On New Results
+            <% end %>
+            <% if @settings.errors[:notify].any? %>
+                <span class="help-block"><%= @settings.errors[:notify].join %></span>
+            <% end %>
+        </div>
+        <!--
+        <div class="form-group">
+            <%= f.label :auto_download do %>
+                <%= f.check_box :auto_download %> Auto Download New Results
+            <% end %>
+            <% if @settings.errors[:auto_download].any? %>
+                <span class="help-block"><%= @settings.errors[:auto_download].join %></span>
+            <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label :fulfill_on_download do %>
+                <%= f.check_box :fulfill_on_download %> Mark Wish Fulfilled on Download
+            <% end %>
+            <% if @settings.errors[:fulfill_on_download].any? %>
+                <span class="help-block"><%= @settings.errors[:fulfill_on_download].join %></span>
+            <% end %>
+        </div>
+        -->
+        <%= f.submit "Save Settings", class: "btn btn-save btn-primary" %>
+    <% end %>
+</div>

@@ -1,0 +1,24 @@
+modules:
+    - name: 'application'
+    - name: 'controllers/settings'
+      exclude: ['application']
+    - name: 'controllers/wish_results'
+      exclude: ['application']
+    - name: 'controllers/wishlist'
+      exclude: ['application']
+    - name: 'controllers/queue'
+      exclude: ['application']
+
+paths:
+    settings: 'controllers/settings'
+    wishlist: 'controllers/wishlist'
+    wish_results: 'controllers/wish_results'
+    queue: 'controllers/queue'
+
+shim:
+    jquery:
+        exports: '$'
+    underscore:
+        exports: '_'
+    bootstrap:
+        deps: ['jquery']

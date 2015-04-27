@@ -1,0 +1,72 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>
+        <i class="glyphicon glyphicon-tasks"></i>
+        Download Queue
+        <small class="queue-info"><%= @queue.status %> | ETA <%= @queue.timeleft %> | <%= @queue.speed %>/sec</small>
+    </h2>
+    <hr />
+
+    <div class="btn-group wishlist-actions">
+        <button class='btn btn-sm btn-default<%= @queue.paused ? '' : ' hide' %>' data-queue-action="resume_queue">
+            <i class="glyphicon glyphicon-play"></i> Resume
+        </button>
+        <button class='btn btn-sm btn-default<%= @queue.paused ? ' hide' : '' %>' data-queue-action="pause_queue">
+            <i class="glyphicon glyphicon-pause"></i> Pause
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="col-sm-2">Name</th>
+                <th class="col-sm-2">Progress</th>
+                <th class="col-sm-1">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @queue.slots.each do |slot| %>
+                <tr data-nzo-id="<%= slot.nzo_id %>">
+                    <td>
+                        <%= slot.filename %><br />
+                        <small class="text-muted item-info">
+                            <%= slot.size %> total | <%= slot.sizeleft %> remaining | ETA <%= slot.timeleft %>
+                        </small>
+                    </td>
+                    <td>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: <%= slot.percentage %>%;">
+                          </div>
+                          <span class="progress-value"><%= slot.percentage %>%</span>
+                        </div>
+                    </td>
+                    <td>
+                        <% paused = slot.status == 'Paused' %>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-item btn-sm btn-default<%= paused ? ' hide' : '' %>" data-queue-action="pause_item" data-toggle="tooltip" title="Pause">
+                                <i class="glyphicon glyphicon-pause"></i>
+                            </button>
+                            <button type="button" class="btn btn-item btn-sm btn-default<%= paused ? '' : ' hide' %>" data-queue-action="resume_item" data-toggle="tooltip" title="Resume">
+                                <i class="glyphicon glyphicon-play"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" data-queue-action="delete_item" data-toggle="tooltip" title="Delete">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caption"><%= format_category(slot.cat) %></span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" data-queue-action="change_category">
+                                <% @queue.categories.each do |cat| %>
+                                    <li><a href="#"><%= cat %></a></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+
+        <tfoot>
+        </tfoot>
+    </table>
+</div>

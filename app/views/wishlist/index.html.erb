@@ -1,0 +1,79 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>
+        <i class="glyphicon glyphicon-bookmark"></i>
+        Wishlist
+    </h2>
+    <hr />
+
+    <div class="btn-group wishlist-actions">
+        <button class="btn btn-sm btn-default btn-wish-editor">
+            <i class="glyphicon glyphicon-plus"></i> Add Wish
+        </button>
+        <%= link_to(fulfilled_path, class: 'btn btn-sm btn-default') do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i> Fulfilled Wishes
+        <% end %>
+    </div>
+
+    <% if @wishes.empty? %>
+        <p>Looks like you aren't looking for anything right now!</p>
+    <% end %>
+
+    <table class="table table-hover<%= @wishes.empty? ? ' hide' : '' %>">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Search Term</th>
+                <th>Category</th>
+                <th>Results</th>
+                <th>Last Search</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @wishes.each do |wish| %>
+                <tr class="<%= wish.has_results? ? 'active' : '' %>"
+                    data-wish-id="<%= wish.id %>"
+                    data-wish-name="<%= wish.name %>"
+                    data-wish-query="<%= wish.query %>"
+                    data-wish-category-id="<%= wish.category_id %>">
+                    <td>
+                        <% if wish.has_results? %>
+                            <%= link_to wish.name, wish_results_path(wish) %>
+                        <% else %>
+                            <%= wish.name %>
+                        <% end %>
+                    </td>
+                    <td><kbd><%= wish.query %></kbd></td>
+                    <td><%= wish.category.canonical_name %></td>
+                    <td>
+                        <% if wish.has_results? %>
+                            <%= link_to wish.results.count, wish_results_path(wish) %>
+                        <% else %>
+                            <%= wish.results.count %>
+                        <% end %>
+                    </td>
+                    <td><%= wish.last_search_age %></td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-xs btn-default btn-wish-editor">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                            <button class="btn btn-xs btn-default btn-wish-delete">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                            <% if wish.has_results? %>
+                                <button class="btn btn-xs btn-default btn-wish-toggle" data-toggle="tooltip" data-placement="top" title="Mark Fulfilled">
+                                    <i class="glyphicon glyphicon-thumbs-up"></i>
+                                </button>
+                            <% end %>
+                        </div>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+
+        <tfoot>
+        </tfoot>
+    </table>
+</div>

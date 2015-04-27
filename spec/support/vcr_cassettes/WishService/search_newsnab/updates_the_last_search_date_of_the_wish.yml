@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<NEWSNAB_URL>/api?age=1&apikey=<NEWSNAB_APIKEY>&cat=4000&o=json&q=ubuntu&t=search"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 27 Apr 2015 15:24:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=kotuiurup6l7r55be06rqvqdc3; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"Generic Newsnab API
+        Search","description":"Generic Newsnab Feed","link":"https:\/\/redacted-newsnab-domain.com\/","language":"en-gb","webMaster":"redacted@domain.org
+        (Generic Newsnab)","category":{},"image":{"url":"https:\/\/redacted-newsnab-domain.com\/\/templates\/default\/images\/banner.jpg","title":"Generic Newsnab","link":"https:\/\/redacted-newsnab-domain.com\/","description":"Visit
+        Generic Newsnab - Redacted Slogan"},"response":{"@attributes":{"offset":"0","total":"0"}}}}'
+    http_version:
+  recorded_at: Mon, 27 Apr 2015 15:24:24 GMT
+recorded_with: VCR 2.9.3

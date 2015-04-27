@@ -1,0 +1,15 @@
+// Place all the styles related to the queue controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.progress {
+    position: relative;
+}
+
+.progress span {
+    position: absolute;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}

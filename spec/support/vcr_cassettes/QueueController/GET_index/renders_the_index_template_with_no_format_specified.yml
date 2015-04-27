@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<SABNZBD_URL>/api?apikey=<SABNZBD_APIKEY>&mode=queue&output=json"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '692'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - CherryPy/3.2.0
+      Pragma:
+      - no-cache
+      Date:
+      - Mon, 27 Apr 2015 15:24:12 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"queue":{"uniconfig":"C:\\Program Files (x86)\\SABnzbd\\interfaces\\Config\\templates","cache_size":"0
+        B","active_lang":"en","paused":false,"session":"<SABNZBD_APIKEY>","restart_req":false,"power_options":true,"slots":[],"speed":"0  ","helpuri":"http://wiki.sabnzbd.org/","size":"0
+        B","uptime":"37d","refresh_rate":"","my_home":"G:\\Documents","limit":0,"have_quota":false,"isverbose":false,"start":0,"finish":0,"version":"0.7.20","new_rel_url":"","my_lcldata":"C:\\Users\\strider-\\AppData\\Local\\sabnzbd","color_scheme":"gold","diskspacetotal1":"931.51","nt":true,"rating_enable":false,"status":"Idle","last_warning":"","have_warnings":"0","cache_art":"0","sizeleft":"0
+        B","finishaction":null,"paused_all":false,"quota":"0 ","newzbin_url":"www.newzbin2.es","new_release":"","pause_int":"0","mbleft":"0.00","diskspace1":"243.76","scripts":[],"categories":["*","anime","apps","console","documentaries","games","movies","music","other","pc","tv","xxx"],"pp_pause_event":false,"darwin":false,"timeleft":"0:00:00","mb":"0.00","noofslots":0,"eta":"unknown","diskspacetotal2":"931.51","nzb_quota":"","loadavg":"","cache_max":"209715200","kbpersec":"0.00","speedlimit":"","webdir":"","queue_details":"0","left_quota":"0
+        ","diskspace2":"243.76"}}'
+    http_version: 
+  recorded_at: Mon, 27 Apr 2015 15:24:12 GMT
+recorded_with: VCR 2.9.3

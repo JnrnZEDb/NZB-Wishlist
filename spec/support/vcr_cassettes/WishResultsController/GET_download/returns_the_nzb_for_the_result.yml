@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nzbs.org/api?apikey=<NEWSNAB_APIKEY>&id=abcd1234&o=json&t=get
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Apr 2015 16:45:43 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '101'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=vi27f9mh2id3mm634en45anm26; path=/; domain=.redacted.com
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <error code="300" description="No such item"/>
+    http_version:
+  recorded_at: Tue, 21 Apr 2015 16:45:43 GMT
+recorded_with: VCR 2.9.3

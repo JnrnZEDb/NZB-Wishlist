@@ -1,0 +1,61 @@
+<div class="col-md-10 col-md-offset-1">
+    <h2>
+        <i class="glyphicon glyphicon-thumbs-up"></i>
+        Fulfilled Wishes
+    </h2>
+    <hr />
+
+    <div class="btn-group wishlist-actions">
+        <%= link_to(root_path, class: 'btn btn-sm btn-default') do %>
+            <i class="glyphicon glyphicon-bookmark"></i> Wishlist
+        <% end %>
+    </div>
+
+    <% if @wishes.empty? %>
+        <p>Looks like none of your wishes have come true :(</p>
+    <% end %>
+
+    <table class="table table-hover<%= @wishes.empty? ? ' hide' : '' %>">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Search Term</th>
+                <th>Category</th>
+                <th>Results</th>
+                <th>Last Search</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @wishes.each do |wish| %>
+                <tr class="<%= wish.has_results? ? 'active' : '' %>"
+                    data-wish-id="<%= wish.id %>"
+                    data-wish-name="<%= wish.name %>"
+                    data-wish-query="<%= wish.query %>"
+                    data-wish-category-id="<%= wish.category_id %>">
+                    <td><%= link_to wish.name, wish_results_path(wish) %></td>
+                    <td><kbd><%= wish.query %></kbd></td>
+                    <td><%= wish.category.canonical_name %></td>
+                    <td><%= link_to wish.results.count, wish_results_path(wish) %></td>
+                    <td><%= wish.last_search_age %></td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-xs btn-default btn-wish-delete">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                            <% if wish.has_results? %>
+                                <button class="btn btn-xs btn-success btn-wish-toggle" data-toggle="tooltip" data-placement="top" title="Mark Unfulfilled">
+                                    <i class="glyphicon glyphicon-thumbs-up"></i>
+                                </button>
+                            <% end %>
+                        </div>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+
+        <tfoot>
+        </tfoot>
+    </table>
+</div>

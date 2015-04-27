@@ -1,0 +1,3 @@
+<%= render layout: 'shared/message_block', locals: { severity: :warning, title: 'SABnzbd Error'} do %>
+    <p>There was an error connecting to your SABnzbd instance. Check your <%= link_to 'settings', edit_settings_path %> or <%= link_to 'refresh', queue_index_path %> the page.</p>
+<% end %>

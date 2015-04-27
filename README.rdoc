@@ -10,4 +10,4 @@ Uses a Newznab indexer to periodically search usenet & sends NZBs directly to SA
 * rake db:migrate && rake db:seed for the initial data, you'll enter your settings into the app
 * If you care about running the tests, add your info to the secrets.yml in the test section
 * Uses whenever + deployed_job to manage the search schedule
-* Uses mina as the deployment gem
+* Uses mina as the deployment gem (Update jobs/update_search_schedule.job with the same domain as your config/deploy.rb)
